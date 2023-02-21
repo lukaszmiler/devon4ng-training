@@ -1,0 +1,18 @@
+<p>movie-overview works!!!</p>
+
+<table>
+    <tr class="title">
+        <td>Id</td>
+        <td>Title</td>
+        <td>Directors</td>
+        <td>Year</td>
+    </tr>
+    <tr *ngFor="let movie of movies">
+        <td>{{movie.id}}</td> 
+        <td><span (click)="selectMovie(movie)">{{movie.title}}</span></td>
+        <td>{{movie.directors}}</td>
+        <td>{{movie.year}}</td>
+    </tr>
+</table>
+
+<div><app-movie-details [movie]="selectMovie"></app-movie-details> </div>
