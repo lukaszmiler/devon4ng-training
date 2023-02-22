@@ -1,14 +1,45 @@
-.title {
-    font-weight: bold;
+body {
+    background-color: red;
 }
 
-td {
-    margin: 10px;
-    padding: 10px;
-    border: 1px;
-}
+:host {
+    body {
+        background-color: red;
+    }
 
-table {
-    background-color: #dddddd;
+    td,
+    th {
+        margin: 10px;
+        padding: 5px;
+        text-align: left;
+    }
+
+    table {
+        background-color: #dddddd;
+        box-shadow: 10px 5px 5px black;
+        margin: 16px;
+        border: 1px solid black;
+    }
+
+    .movie td {
+        cursor: pointer;
+    }
+
+    div {
+        //background-color: white;
+        box-shadow: 10px 5px 5px black;
+        padding: 16px;
+        margin: 16px;
+
+    }
+
+    .description {
+        background-color: #dddddd;
+        border: 1px solid black;
+    }
+
+    tr:hover {
+        background: #aaa;
+    }
 }
 

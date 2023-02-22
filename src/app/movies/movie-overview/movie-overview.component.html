@@ -1,18 +1,22 @@
 <p>movie-overview works!!!</p>
 
 <table>
-    <tr class="title">
-        <td>Id</td>
-        <td>Title</td>
-        <td>Directors</td>
-        <td>Year</td>
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Directors</th>
+        <th>Year</th>
+        <th>Description</th>
     </tr>
-    <tr *ngFor="let movie of movies">
+    <tr *ngFor="let movie of movies" (click)="selectMovie(movie)" class="movie">
         <td>{{movie.id}}</td> 
-        <td><span (click)="selectMovie(movie)">{{movie.title}}</span></td>
-        <td>{{movie.directors}}</td>
-        <td>{{movie.year}}</td>
+        <td>{{movie.title}}</td> 
+        <td>{{movie.directors}}</td> 
+        <td>{{movie.year}}</td> 
+        <td>{{movie.description}}</td> 
     </tr>
 </table>
 
-<div><app-movie-details [movie]="selectMovie"></app-movie-details> </div>
+<div class="description">
+    <app-movie-details [movie]="selectedMovie"  *ngIf="selectedMovie" (movieUpdate) = "onMovieUpdated($event)" (movieCreate) = "onCreateMovie($event)"></app-movie-details> 
+</div>
